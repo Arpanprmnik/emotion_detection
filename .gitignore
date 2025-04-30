@@ -1,0 +1,5 @@
+__pycache__/
+frontend/emotion
+tempCodeRunnerFile.py
+modeltraining.py
+*.csv
