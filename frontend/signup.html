@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script> <!-- Link to JavaScript -->
+</head>
+<body class="signup-page">
+    <div class="login-link">
+        <p>Already a member? <a href="login.html">Log In</a></p>
+    </div>
+   
+    <div class="signup-container">
+        <header>
+            <h1>Create new account<span class="highlight">.</span></h1>
+        </header>
+        <form id="signupForm">
+            <div class="input-row">
+                <div class="input-group">
+                    <span class="icon">👤</span>
+                    <input type="text" id="firstName" placeholder="First name" required>
+                </div>
+                <div class="input-group">
+                    <span class="icon">👤</span>
+                    <input type="text" id="lastName" placeholder="Last name" required>
+                </div>
+            </div>
+            <div class="input-group">
+                <span class="icon">📧</span>
+                <input type="email" id="signupEmail" placeholder="Email" required>
+            </div>
+            <div class="input-group password-group">
+                <span class="icon">🔒</span>
+                <input type="password" id="signupPassword" placeholder="Password" required>
+                <span class="toggle-password" onclick="togglePassword('signupPassword')">👁️</span>
+            </div>
+            <div class="input-group password-group">
+                <span class="icon">🔒</span>
+                <input type="password" id="confirmPassword" placeholder="Confirm Password" required>
+                <span class="toggle-password" onclick="togglePassword('confirmPassword')">👁️</span>
+            </div>
+            <button type="submit" class="btn-primary">Create account</button>
+            <p id="passwordError" class="error-message"></p>
+        </form>
+    </div>
+</body>
+
+</html>

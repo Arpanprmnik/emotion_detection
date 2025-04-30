@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="login-page">
+    <!-- Sign Up Link on the top right -->
+    <div class="login-link">
+        <p>Don't have an account? <a href="signup.html">Sign Up</a></p>
+    </div>
+
+    <div class="login-container">
+        <header>
+            <h1>Welcome back<span class="highlight">.</span></h1>
+        </header>
+        <form id="loginForm" action="/login" method="POST">
+            <div class="input-group">
+                <span class="icon">👤</span>
+                <input type="text" id="loginInput" name="loginInput" placeholder="Username or Email" required>
+            </div>
+            <div class="input-group password-group">
+                <span class="icon">🔒</span>
+                <input type="password" id="passwordField" name="password" placeholder="Password" required>
+                <span class="toggle-password" onclick="togglePassword('passwordField', 'toggleIcon')">
+                    <i class="fa-regular fa-eye-slash" id="toggleIcon"></i>
+                </span>
+            </div>
+           
+            <button type="submit" class="btn-primary">Log In</button>
+            <p id="loginError" class="error-message"></p>
+        </form>
+    </div>
+</body>
+</html>

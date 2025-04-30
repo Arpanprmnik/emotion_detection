@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Audio</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+<header>
+    <h1>Upload or Record Audio</h1>
+</header>
+
+<main>
+    <div class="upload-container">
+        <h2>Choose a method to upload audio</h2>
+
+        <!-- Hidden file input -->
+        <input type="file" id="audioFile" accept=".wav" style="display: none;">
+        <button id="uploadButton">Upload Audio</button>
+        <p id="fileError" style="color: red;"></p>
+
+        <h3>OR</h3>
+
+        <!-- Recording buttons -->
+        <button id="recordButton">Start Recording</button>
+        <button id="stopButton" disabled>Stop Recording</button>
+
+        <!-- Audio playback for recorded audio -->
+        <audio id="audioPlayback" controls style="display: none;"></audio>
+    </div>
+</main>
+
+<footer>
+    <p>&copy; 2025 Emotion Detection System</p>
+</footer>
+
+</body>
+</html>

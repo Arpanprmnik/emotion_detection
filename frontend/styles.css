@@ -1,0 +1,622 @@
+/*admin panel ar database hoyeni. dashboard bole ekta ache seta login, signup korar por kaj korbe.*/
+
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap');
+
+/* Reset Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* General Styles */
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #121212; /* Dark background */
+    color: #E0E0E0; /* Light text */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header & Footer */
+header, footer {
+    background: #333;
+    color: white;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0.3); /* Thin border */
+}
+
+/* Header Title */
+header h1 {
+    font-size: 22px;
+}
+
+/* Header Buttons */
+.header-buttons {
+    display: flex;
+}
+
+.header-buttons button {
+    margin-left: 10px;
+    padding: 10px 15px;
+    border: 1px solid #333;
+    border-radius: 8px;
+    background-color: #333;
+    color: white;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.3s ease-in-out;
+}
+
+.header-buttons button:hover {
+    background-color: #555;
+}
+
+/* Hero Section */
+.hero {
+    text-align: left;
+    width: 60%;
+    padding: 30px;
+    margin-right: 45%;
+}
+
+.hero h2 {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Button Container (Centered Below Hero) */
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+/* Glowing Button */
+.btn-glow {
+    padding: 15px 25px;
+    font-size: 18px;
+    border-radius: 30px;
+    background: linear-gradient(45deg, #ff6b6b, #ff8e53);
+    box-shadow: 0px 5px 20px rgba(255, 107, 107, 0.4);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.btn-glow:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 8px 25px rgba(255, 107, 107, 0.6);
+}
+
+/* About Us Pop-up */
+.popup-overlay {
+    display: none; /* Hidden initially */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Pop-up Content */
+.popup-content {
+    background: white;
+    padding: 20px;
+    width: 350px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+/* Pop-up Header */
+.popup-content h2 {
+    margin-bottom: 10px;
+    font-size: 22px;
+    color: #222;
+}
+
+/* Pop-up Text */
+.popup-content p {
+    font-size: 18px;
+    color: #333;
+    margin: 5px 0;
+}
+
+/* Close Button */
+.close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+/* Responsive Header for Mobile */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .header-buttons {
+        margin-top: 10px;
+    }
+}
+
+/* Main Content */
+main {
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Sections */
+.description, .developers {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    margin: 15px 0;
+    border-radius: 8px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 800px;
+    text-align: center;
+}
+
+/* Buttons */
+button {
+    background: #0066cc;
+    color: white;
+    border: none;
+    padding: 12px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background: #004a99;
+}
+
+/* Responsive Buttons for Small Screens */
+@media (max-width: 600px) {
+    button {
+        width: 100%;
+        padding: 14px;
+        font-size: 18px;
+    }
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 15px 0;
+    background: #1F1F1F;
+    color: white;
+    width: 100%;
+    position: relative;
+    bottom: 0;
+    margin-top: auto;
+}
+
+
+/* Close button */
+.close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+
+/* Pop-up Box */
+.popup-content {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+    width: 300px;
+    text-align: center;
+}
+
+
+/* Responsive Header for Mobile */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .header-buttons {
+        margin-top: 10px;
+    }
+}
+
+/* Main Content */
+main {
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Sections */
+.description, .developers {
+    background: rgba(255, 255, 255, 0.1); /* Glass effect */
+    padding: 20px;
+    margin: 15px 0;
+    border-radius: 8px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 800px;
+    text-align: center;
+}
+
+/* Buttons */
+button {
+    background: #0066cc;
+    color: white;
+    border: none;
+    padding: 12px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background: #004a99;
+}
+
+/* Responsive Buttons for Small Screens */
+@media (max-width: 600px) {
+    button {
+        width: 100%;
+        padding: 14px;
+        font-size: 18px;
+    }
+}
+
+/* Footer - Sticks to Bottom */
+footer {
+    text-align: center;
+    padding: 15px 0;
+    background: #1F1F1F;
+    color: white;
+    width: 100%;
+    position: relative;
+    bottom: 0;
+    margin-top: auto;
+}
+
+/*sign up*/
+
+/* General Styling */
+body.signup-page {
+    background: #0f172a;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Signup Container */
+.signup-container {
+    background: #1e293b;
+    padding: 40px;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Input Fields */
+.input-group {
+    position: relative;
+    width: 100%;
+    margin-bottom: 12px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px 40px;
+    border-radius: 8px;
+    border: 1px solid #334155;
+    background: #1e293b;
+    color: white;
+    font-size: 16px;
+    outline: none;
+    box-sizing: border-box;
+}
+
+/* Icons */
+.icon {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #94a3b8;
+    font-size: 16px;
+}
+
+/* Style for password toggle icon */
+.toggle-password {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #aaa;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+.toggle-password:hover {
+    color: #fff;
+}
+
+
+/* Buttons */
+.btn-primary {
+    background: #3b82f6;
+    color: white;
+    border: none;
+    padding: 14px;
+    border-radius: 8px;
+    width: 100%;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-primary:hover {
+    background: #2563eb;
+}
+
+/* Error Message */
+.error-message {
+    color: #f87171;
+    font-size: 14px;
+    margin-top: 8px;
+}
+
+/* Move "Already a member? Log In" to the top-right corner */
+.login-link {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 16px;
+    color: #ffffff;
+    font-weight: 500;
+}
+
+/* Make the "Log In" text bold and more visible */
+.login-link a {
+    font-weight: bold;
+    color: #3b82f6;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.login-link a:hover {
+    color: #2563eb;
+    text-decoration: underline;
+}
+
+/*login*/
+
+/* Style for the login container (same as sign-up but applied to login page) */
+.login-container {
+    background-color: #1e293b;
+    color: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 400px;
+    margin: 80px auto;
+}
+
+
+/* Ensures login page has a similar layout */
+.login-page {
+    background-color: #0f172a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Move the "Sign Up" link to the top right */
+.login-link {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 16px;
+    color: #ffffff;
+    font-weight: 500;
+}
+
+/* Style for "Sign Up" link */
+.login-link a {
+    font-weight: bold;
+    color: #3b82f6;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.login-link a:hover {
+    color: #2563eb;
+    text-decoration: underline;
+}
+
+/*fun*/
+
+/* General Styles */
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #121212;
+    color: #E0E0E0;
+    text-align: center;
+    overflow-x: hidden;
+}
+
+/* Background Animation */
+#background-animation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.9));
+    z-index: -1;
+    animation: backgroundFade 5s infinite alternate;
+}
+
+@keyframes backgroundFade {
+    from { background: radial-gradient(circle, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)); }
+    to { background: radial-gradient(circle, rgba(20, 20, 20, 0.7), rgba(0, 0, 0, 0.9)); }
+}
+
+/* Header */
+header {
+    background: rgba(30, 30, 30, 0.9);
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Buttons */
+button {
+    background: #0066cc;
+    color: white;
+    border: none;
+    padding: 12px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background: #004a99;
+}
+
+/* Hero Section */
+.hero {
+    margin-top: 50px;
+    padding: 50px;
+}
+
+.hero h2 {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Glowing CTA Button */
+.btn-glow {
+    padding: 15px 25px;
+    font-size: 18px;
+    border-radius: 30px;
+    background: linear-gradient(45deg, #ff6b6b, #ff8e53);
+    box-shadow: 0px 5px 20px rgba(255, 107, 107, 0.4);
+    transition: all 0.3s ease;
+}
+
+.btn-glow:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 8px 25px rgba(255, 107, 107, 0.6);
+}
+
+/* Features Section */
+.features {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 50px auto;
+    width: 80%;
+}
+
+.feature-box {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 12px;
+    width: 30%;
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s ease;
+}
+
+.feature-box:hover {
+    transform: scale(1.05);
+}
+
+/* Interactive Section */
+.interactive {
+    margin-top: 60px;
+}
+
+.btn-quiz {
+    background: linear-gradient(90deg, #6a11cb, #2575fc);
+    padding: 15px 30px;
+    border-radius: 25px;
+    font-size: 18px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 255, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.btn-quiz:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 8px 20px rgba(0, 0, 255, 0.5);
+}
+
+.upload-container {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.upload-container button {
+    background: #0066cc;
+    color: white;
+    border: none;
+    padding: 12px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s ease;
+    margin: 10px;
+}
+
+.upload-container button:hover {
+    background: #004a99;
+}
