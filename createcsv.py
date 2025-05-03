@@ -57,8 +57,8 @@ def process_folder(input_folder, output_folder):
         print(f"Error Message: {str(e)}")
 
 if __name__ == '__main__':
-    input_folder = r"D:\code\python\intership\main\emotion\evolution"  # Base folder containing subfolders for each emotion
-    output_folder = r"D:\code\python\intership\main\emotion\evolution_fit"  # Directory to save the output CSV files
+    input_folder = r"D:\code\python\intership\main\frontend\emotion\evolution"  # Base folder containing subfolders for each emotion
+    output_folder = r"D:\code\python\intership\main\frontend\emotion\evolution_fit"  # Directory to save the output CSV files
 
     # Ensure the output directory exists
     if not os.path.exists(output_folder):

@@ -204,7 +204,7 @@ import soundfile as sf
 from sklearn.preprocessing import StandardScaler
 
 # Load trained models
-modeldir = r"D:\code\python\intership\main\emotion\models"
+modeldir = r"D:\code\python\intership\main\frontend\emotion\models"
 svm_model_path = os.path.join(modeldir, "mfcc_savee_trained-model.svm")
 
 # Emotion Mapping

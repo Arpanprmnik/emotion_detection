@@ -4,7 +4,7 @@ import pandas as pd
 from sklearn.metrics import accuracy_score
 
 # Path to the directory where models are saved
-modeldir = r"D:\code\python\intership\main\emotion\models"
+modeldir = r"D:\code\python\intership\main\frontend\emotion\models"
 
 # Define model file paths
 models = {
@@ -18,7 +18,8 @@ models = {
 
 
 # Path to the CSV file containing the test dataset
-test_csv_path = r"D:\code\python\intership\main\emotion\evolution_fit.csv"
+test_csv_path = r"D:/code/python/intership/main/frontend/emotion/evolution_fit.csv"
+
 
 # Load the test dataset, skipping the first row (header)
 data = pd.read_csv(test_csv_path, skiprows=1, header=None)

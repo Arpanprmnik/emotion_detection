@@ -69,8 +69,8 @@ emotion_dict = {'angry': 0, 'disgust': 1, 'fear': 2, 'happy': 3,
                 'neutral': 4, 'Sad': 5, 'pleasant_surprised': 6}
 
 # Input folder and output file path
-input_folder = r"D:\code\python\intership\main\emotion\evolution_fit"  # Replace with your folder path
-output_file = r"D:\code\python\intership\main\emotion\evolution_fit.csv"
+input_folder = r"D:\code\python\intership\main\frontend\emotion\evolution_fit"  # Replace with your folder path
+output_file = r"D:\code\python\intership\main\frontend\emotion\evolution_fit.csv"
 
 # Call the function to generate train_fit.csv
 x_train, y_train = create_feat_csv_and_arrays(input_folder, output_file)

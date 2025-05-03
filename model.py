@@ -120,7 +120,7 @@ emotion_dict = {
 }
 
 # Define the model directory
-modeldir = r"D:\code\python\intership\main\emotion\models"
+modeldir = r"D:\code\python\intership\main\frontend\emotion\models"
 
 # Create the directory if it does not exist
 if not os.path.exists(modeldir):
@@ -130,8 +130,8 @@ else:
     print(f"Directory '{modeldir}' already exists.")
 
 # Input folder and output file path
-input_folder = r"D:\code\python\intership\main\emotion\train_fit"
-output_file = r"D:\code\python\intership\main\emotion\train_fit.csv"
+input_folder = r"D:\code\python\intership\main\frontend\emotion\train_fit"
+output_file = r"D:\code\python\intership\main\frontend\emotion\train_fit.csv"
 
 # Call the function to create CSV and get x_train and y_train
 x_train, y_train = create_feat_csv_and_arrays(input_folder, output_file)
